@@ -1,0 +1,50 @@
+#!/usr/local/bin/ruby
+
+require 'nokogiri'
+require 'open-uri'
+
+class Scraper
+
+  def self.scrape_index_page
+    doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex/national"))
+
+		#individual pokemon name
+    # doc.css(".infocard").css("a.ent-name")[0].text
+		#=> "Bulbasaur"
+
+		#individual pokemon number
+		# doc.css(".infocard").css("small")[0].text
+		#=>"#001"
+
+		#individual pokemon url
+		# doc.css(".infocard").css("a.ent-name")[0].attribute("href").value
+		#=>"/pokedex/bulbasaur"
+  end
+
+
+# https://www.pokemon.com/us
+
+# https://www.pokemon.com/us/pokedex/bulbasaur
+
+	def self.scrape_single_pokemon
+			doc = Nokogiri::HTML(open("https://www.pokemon.com/us/pokedex/bulbasaur"), nil, 'utf-8')
+
+		# pokemon.description =
+		# doc.css("p.version-y")[0].text.strip.gsub("\n", " ")
+
+		# pokemon.category =
+		# doc.css("span.attribute-value")[3].text
+
+		# pokemon.abilities =
+		# doc.css("span.attribute-value")[4].text
+
+		# pokemon.height =
+		doc.css("span.attribute-value")[0].text
+
+
+
+
+	end
+
+  puts Scraper.scrape_single_pokemon
+end
