@@ -13,7 +13,7 @@ class Scraper
 
 	def self.scrape_single_pokemon(pokemon)
 		doc = Nokogiri::HTML(open("https://www.pokemon.com/us#{pokemon.url}"), nil, 'utf-8')
-
+		# pokemon.name = doc.css("div.pokedex-pokemon-pagination-title div").text.split[0]
 		pokemon.description = doc.css("p.version-y")[0].text.strip.gsub("\n", " ")
 		pokemon.category = doc.css("span.attribute-value")[3].text
 		pokemon.abilities = doc.css("span.attribute-value")[4].text
