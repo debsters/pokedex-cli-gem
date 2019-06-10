@@ -13,6 +13,9 @@ class CommandLineInterface
 	def welcome
     puts ""
     puts "Welcome to the".colorize(:color => :red, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "Pokedex!".colorize(:color => :red, :mode => :bold)
+    puts "  {\\_""_/}"
+    puts "  ( •.•)" + " PIKACHU!"
+    puts "  / > \\"
   end
 
 	def menu
