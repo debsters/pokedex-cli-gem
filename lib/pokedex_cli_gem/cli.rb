@@ -29,6 +29,10 @@ class CommandLineInterface
       puts "To see the".colorize(:color => :light_blue, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "list again, enter 'list'.".colorize(:color => :light_blue, :mode => :bold)
       puts "To exit the program, enter 'exit'.".colorize(:color => :light_blue, :mode => :bold)
       puts "--------------------------------------------------------------".colorize(:color => :red, :mode => :bold)
+      puts "  {\\_""_/}"
+    	puts "  ( •.•)"
+    	puts "  / > \\"
+			puts " "
 
       input = gets.strip.downcase
 
