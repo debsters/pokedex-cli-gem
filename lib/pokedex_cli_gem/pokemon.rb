@@ -12,10 +12,6 @@ class Pokemon
     @@all
   end
 
-  def self.alphabetized_list
-    @@all.each.sort_by { |pokemon| pokemon.name}
-  end
-
 	def self.ordered_list
     @@all.each.sort_by { |pokemon| pokemon.number}
   end
