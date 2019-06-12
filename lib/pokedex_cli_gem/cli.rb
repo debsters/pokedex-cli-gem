@@ -55,7 +55,7 @@ class CommandLineInterface
     puts "Enter a number from 1 - 809 to see 25".colorize(:color => :blue, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "from the number you've entered.".colorize(:color => :blue, :mode => :bold)
 		from_number = gets.strip.to_i
 		puts ""
-    puts "-----------------------".colorize(:color => :red, :mode => :bold) + " Pokemon".colorize(:color => :yellow, :mode => :bold) + " #{from_number} - #{from_number+24} -----------------------".colorize(:color => :red, :mode => :bold)
+    puts "-----------------------".colorize(:color => :red, :mode => :bold) + " Pokemon".colorize(:color => :yellow, :mode => :bold) + " #{from_number} - #{from_number+25} -----------------------".colorize(:color => :red, :mode => :bold)
     puts ""
     puts "--------------------------------------------------------------".colorize(:color => :red, :mode => :bold)
     Pokemon.ordered_list[from_number-1,25].each.with_index(from_number) do |pokemon, index|
