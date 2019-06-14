@@ -2,10 +2,11 @@ class CommandLineInterface
 
   def run
     welcome
+    PokeTypes.create_five_poke_types
 		Scraper.scrape_pokemon_list
 		print_pokemon_list_from_number
 		menu
-    puts " "
+    puts self
 		puts "Goodbye!".colorize(:color => :blue, :mode => :bold)
     puts " "
   end
