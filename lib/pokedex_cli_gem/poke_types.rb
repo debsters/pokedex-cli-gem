@@ -11,6 +11,13 @@ class PokeType
     @@all
   end
 
+  def pokemon
+    #returns an array of all the pokemon associated with this poketype
+    Pokemon.all.select do |pokemon|
+      pokemon.poketype == self
+    end
+  end
+
   def self.create_five_poke_types
     type_array = ["Grass", "Poison", "Fire", "Water", "Bug"]
     type_array.each do |i|
