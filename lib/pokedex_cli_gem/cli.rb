@@ -2,11 +2,10 @@ class CommandLineInterface
 
   def run
     welcome
-    PokeTypes.create_five_poke_types
 		Scraper.scrape_pokemon_list
 		print_pokemon_list_from_number
 		menu
-    puts self
+    puts " "
 		puts "Goodbye!".colorize(:color => :blue, :mode => :bold)
     puts " "
   end
@@ -14,9 +13,6 @@ class CommandLineInterface
 	def welcome
     puts ""
     puts "Welcome to the".colorize(:color => :red, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "Pokedex!".colorize(:color => :red, :mode => :bold)
-    puts "  {\\_""_/}"
-    puts "  ( •.•)" + " PIKACHU!"
-    puts "  / > \\"
   end
 
 	def menu
@@ -30,10 +26,6 @@ class CommandLineInterface
       puts "To see the".colorize(:color => :light_blue, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "list again, enter 'list'.".colorize(:color => :light_blue, :mode => :bold)
       puts "To exit the program, enter 'exit'.".colorize(:color => :light_blue, :mode => :bold)
       puts "--------------------------------------------------------------".colorize(:color => :red, :mode => :bold)
-      puts "  {\\_""_/}"
-    	puts "  ( •.•)"
-    	puts "  / > \\"
-			puts " "
 
       input = gets.strip.downcase
 
@@ -53,13 +45,13 @@ class CommandLineInterface
 		puts ""
 		puts "What".colorize(:color => :blue, :mode => :bold)+ " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "number would you like to see?".colorize(:color => :blue, :mode => :bold)
 
-    puts "Enter a number from 1 - 809 to see 25".colorize(:color => :blue, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "from the number you've entered.".colorize(:color => :blue, :mode => :bold)
+    puts "Enter a number from 1 - 809 to see 50".colorize(:color => :blue, :mode => :bold) + " " + "Pokemon".colorize(:color => :yellow, :mode => :bold) + " " + "from the number you've entered.".colorize(:color => :blue, :mode => :bold)
 		from_number = gets.strip.to_i
 		puts ""
-    puts "-----------------------".colorize(:color => :red, :mode => :bold) + " Pokemon".colorize(:color => :yellow, :mode => :bold) + " #{from_number} - #{from_number+24} -----------------------".colorize(:color => :red, :mode => :bold)
+    puts "-----------------------".colorize(:color => :red, :mode => :bold) + " Pokemon".colorize(:color => :yellow, :mode => :bold) + " #{from_number} - #{from_number+49} -----------------------".colorize(:color => :red, :mode => :bold)
     puts ""
     puts "--------------------------------------------------------------".colorize(:color => :red, :mode => :bold)
-    Pokemon.ordered_list[from_number-1,25].each.with_index(from_number) do |pokemon, index|
+    Pokemon.ordered_list[from_number-1,50].each.with_index(from_number) do |pokemon, index|
       puts "#{index}.".colorize(:color => :yellow,:mode => :bold) + " " + "#{pokemon.name}".colorize(:color => :blue, :mode => :bold)
     end
   end

@@ -12,5 +12,4 @@ require 'colorize'
 
 require_relative './pokedex_cli_gem/cli'
 require_relative './pokedex_cli_gem/pokemon'
-require_relative './pokedex_cli_gem/poke_types'
 require_relative './pokedex_cli_gem/scraper'
